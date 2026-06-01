@@ -1,0 +1,100 @@
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 90px; /* clear the fixed navbar */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  gap: 2rem;
+}
+
+/* ── LEFT: text ── */
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3rem 0;
+}
+
+.eyebrow {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.headline {
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 2rem;
+}
+
+.sub {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--text-muted);
+  max-width: 440px;
+  line-height: 1.65;
+  margin-bottom: 3rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btnPrimary:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--text);
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--surface-border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.btnSecondary:hover {
+  border-color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* ── RIGHT: 3D canvas ── */
+.canvas {
+  height: 70vh;
+  min-height: 400px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 120px;
+    gap: 0;
+  }
+
+  .canvas {
+    height: 50vw;
+    min-height: 260px;
+  }
+}

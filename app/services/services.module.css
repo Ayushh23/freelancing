@@ -1,0 +1,159 @@
+.header {
+  padding: 4rem 0 5rem;
+  border-bottom: 1px solid var(--surface-border);
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text);
+  line-height: 1.75;
+  max-width: 640px;
+  margin-top: 1.5rem;
+  opacity: 0.75;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 3rem;
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.number {
+  color: var(--text-muted);
+  padding-top: 0.5rem;
+}
+
+.serviceTitle {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: var(--accent, #6366f1);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.desc {
+  font-size: 1.1rem;
+  color: var(--text);
+  line-height: 1.8;
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 580px;
+}
+
+.bullet {
+  font-size: 0.95rem;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.5;
+}
+
+.bulletDot {
+  color: var(--text-primary);
+  flex-shrink: 0;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+}
+
+/* Bottom CTA */
+.cta {
+  padding: 8rem 0 6rem;
+  max-width: 700px;
+}
+
+.ctaEye {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.ctaTitle {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.ctaSub {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  max-width: 580px;
+  opacity: 0.75;
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.ctaBtn:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

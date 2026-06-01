@@ -1,0 +1,359 @@
+/* ── Marquee trust strip ── */
+.strip {
+  border-top: 1px solid var(--surface-border);
+  padding: 1.5rem 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.marqueeWrap {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%, black 8%, black 92%, transparent 100%
+  );
+}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll 22s linear infinite;
+  width: max-content;
+}
+
+.mItem {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0 1.5rem;
+  flex-shrink: 0;
+}
+
+.mDot {
+  margin-left: 1.5rem;
+  color: var(--accent);
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Shared section scaffolding ── */
+.section {
+  padding: 7rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHead {
+  max-width: 640px;
+  margin-bottom: 5rem;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.sectionSub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.sectionFooter {
+  margin-top: 3.5rem;
+}
+
+.linkBtn {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.2s;
+}
+
+.linkBtn:hover {
+  text-decoration-color: var(--text);
+}
+
+/* ── Stats ── */
+.statsSection {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+}
+
+.statValue {
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+/* ── Services preview ── */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.serviceCard {
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-md);
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-6px);
+}
+
+.serviceIcon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.serviceTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.serviceDesc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Featured Work ── */
+.featuredSection {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(160, 188, 255, 0.06) 50%,
+    transparent 100%
+  );
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.featuredCard {
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.featuredCard:hover {
+  transform: translateY(-6px);
+}
+
+.featLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.featTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.featDesc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.featResult {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-sm);
+}
+
+.featResult strong {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* ── Process ── */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  border-top: 1px solid var(--surface-border);
+  padding-top: 3.5rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stepNum {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.stepTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.stepDesc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Bottom CTA ── */
+.ctaSection {
+  padding-bottom: 8rem;
+}
+
+.ctaBox {
+  border-radius: var(--radius-lg);
+  padding: 6rem 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaTitle {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.ctaSub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.65;
+  margin-bottom: 3rem;
+}
+
+.ctaActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ctaPrimary {
+  background: var(--text);
+  color: var(--bg);
+  padding: 1rem 2.4rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.ctaPrimary:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--text);
+  padding: 1rem 2.4rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--surface-border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.ctaSecondary:hover {
+  border-color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .statsGrid,
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .servicesGrid,
+  .featuredGrid {
+    grid-template-columns: 1fr;
+  }
+  .ctaBox {
+    padding: 3.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid,
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+}
