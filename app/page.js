@@ -4,6 +4,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import AnimatedCounter from "../components/AnimatedCounter";
 import GlowCard from "../components/GlowCard";
 import MagneticButton from "../components/MagneticButton";
+import { Rocket, Timer, TrendingDown, Target, Settings, Globe, Bot, PhoneCall, ClipboardList, Hammer, Zap } from "lucide-react";
 // Note: MagneticButton handles Next.js Link internally via href prop
 import styles from "./home.module.css";
 
@@ -19,29 +20,29 @@ const MARQUEE_ITEMS = [
 ];
 
 const STATS = [
-  { value: "15",  suffix: "+",   label: "Projects Shipped",        icon: "🚀" },
-  { value: "8",   suffix: " hrs",label: "Saved Per Manager/Week",  icon: "⏱️" },
-  { value: "60",  suffix: "%",   label: "Drop in Admin Queries",   icon: "📉" },
-  { value: "5000",suffix: "+",   label: "Registrations Handled",   icon: "🎯" },
+  { value: "15",  suffix: "+",   label: "Projects Shipped",        icon: <Rocket size={24} color="#7C3AED" /> },
+  { value: "8",   suffix: " hrs",label: "Saved Per Manager/Week",  icon: <Timer size={24} color="#10B981" /> },
+  { value: "60",  suffix: "%",   label: "Drop in Admin Queries",   icon: <TrendingDown size={24} color="#06B6D4" /> },
+  { value: "5000",suffix: "+",   label: "Registrations Handled",   icon: <Target size={24} color="#7C3AED" /> },
 ];
 
 const SERVICES_PREVIEW = [
   {
-    icon: "⚙️",
+    icon: <Settings size={32} color="#7C3AED" />,
     title: "Automation & Bots",
     desc: "From Python scripts to Zapier flows — we turn hours of manual work into a single click.",
     accent: "99,102,241",
     tag: "Save Time",
   },
   {
-    icon: "🌐",
+    icon: <Globe size={32} color="#06B6D4" />,
     title: "Web Platforms",
     desc: "High-performance sites and apps with Next.js and Node. Built to handle real traffic.",
     accent: "6,182,212",
     tag: "Scale Fast",
   },
   {
-    icon: "🤖",
+    icon: <Bot size={32} color="#10B981" />,
     title: "Custom AI Bots",
     desc: "LLM-powered bots trained on your data, integrated into WhatsApp, Slack, or your site.",
     accent: "168,85,247",
@@ -50,10 +51,10 @@ const SERVICES_PREVIEW = [
 ];
 
 const STEPS = [
-  { num: "01", title: "Discovery Call",    desc: "We understand your workflow, bottlenecks, and goals in a 30-minute call.", icon: "📞" },
-  { num: "02", title: "Proposal & Scope",  desc: "You receive a clear plan — what we build, timeline, and cost. No surprises.", icon: "📋" },
-  { num: "03", title: "Build & Iterate",   desc: "We ship in sprints and keep you in the loop. Feedback-first, always.", icon: "🔨" },
-  { num: "04", title: "Launch & Support",  desc: "We deploy, monitor, and provide 30 days of support post-launch.", icon: "🎉" },
+  { num: "01", title: "Discovery Call",    desc: "We understand your workflow, bottlenecks, and goals in a 30-minute call.", icon: <PhoneCall size={28} /> },
+  { num: "02", title: "Proposal & Scope",  desc: "You receive a clear plan — what we build, timeline, and cost. No surprises.", icon: <ClipboardList size={28} /> },
+  { num: "03", title: "Build & Iterate",   desc: "We ship in sprints and keep you in the loop. Feedback-first, always.", icon: <Hammer size={28} /> },
+  { num: "04", title: "Launch & Support",  desc: "We deploy, monitor, and provide 30 days of support post-launch.", icon: <Zap size={28} /> },
 ];
 
 const FEATURED = [
@@ -107,15 +108,18 @@ export default function Home() {
             <p className={`mono ${styles.eyebrow}`}>By the numbers</p>
           </ScrollReveal>
           <div className={styles.statsGrid}>
-            {STATS.map((s, i) => (
-              <ScrollReveal key={s.label} delay={i * 0.1}>
-                <GlowCard className={`${styles.statCard}`}>
-                  <span className={styles.statIcon}>{s.icon}</span>
-                  <span className={styles.statValue}>
-                    <AnimatedCounter target={s.value} suffix={s.suffix} />
-                  </span>
-                  <span className={styles.statLabel}>{s.label}</span>
-                </GlowCard>
+            {STATS.map((stat, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className={styles.statCard}>
+                  <div className={styles.statIconBox}>{stat.icon}</div>
+                  <div className={styles.statContent}>
+                    <div className={styles.statValueRow}>
+                      <AnimatedCounter target={parseInt(stat.value)} />
+                      <span className={styles.statSuffix}>{stat.suffix}</span>
+                    </div>
+                    <span className={styles.statLabel}>{stat.label}</span>
+                  </div>
+                </div>
               </ScrollReveal>
             ))}
           </div>

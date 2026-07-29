@@ -159,8 +159,8 @@ export default function WorkInteractive() {
         <ScrollReveal delay={0.3}>
           <GlowCard className={styles.featuredCaseStudy} glowColor="99,102,241">
             <div className={styles.featuredBadgeRow}>
-              <span className={styles.featuredTag}>FLAGSHIP CASE STUDY</span>
-              <span className={styles.featuredYear}>{featuredProject.year}</span>
+              <span className={styles.featuredTag}>MISSION BRIEFING</span>
+              <span className={styles.featuredYear}>2025</span>
             </div>
 
             <div className={styles.featuredGrid}>
@@ -215,6 +215,7 @@ export default function WorkInteractive() {
           .map((p, idx) => (
             <ScrollReveal key={p.id} delay={idx * 0.1}>
               <GlowCard className={styles.projectCard} glowColor="139,92,246">
+                <div className={styles.timelineBar} />
                 <div className={styles.cardHeader}>
                   <div>
                     <span className={styles.cardCategory}>{p.category}</span>

@@ -140,6 +140,11 @@ export default function ServicesInteractive() {
     return acc + (item ? item.hours : 0);
   }, 0);
 
+  // Calculate percentage of node connector height
+  const selectedCount = selectedEstimates.length;
+  const totalCount = ESTIMATOR_OPTIONS.length;
+  const connectionHeight = totalCount > 1 ? (selectedCount > 0 ? ((selectedCount - 1) / (totalCount - 1)) * 100 : 0) : 0;
+
   return (
     <div className={styles.container}>
       {/* ── Page Header ── */}
@@ -185,7 +190,13 @@ export default function ServicesInteractive() {
         <GlowCard className={styles.showcaseCard} glowColor="99,102,241">
           <div className={styles.showcaseHeader}>
             <div>
-              <span className={styles.serviceNumLabel}>{activeService.number} / 05</span>
+              <div className={styles.serviceStatusRow}>
+                <span className={styles.serviceNumLabel}>{activeService.number} / 05</span>
+                <div className={styles.statusIndicator}>
+                  <span className={styles.statusDot} />
+                  SYSTEM ONLINE
+                </div>
+              </div>
               <h2 className={styles.showcaseTitle}>{activeService.title}</h2>
               <p className={styles.showcaseSubtitle}>{activeService.subtitle}</p>
             </div>
@@ -251,7 +262,7 @@ export default function ServicesInteractive() {
                         {'    '}notify: [<span className={styles.str}>&quot;Slack:#exec-updates&quot;</span>, <span className={styles.str}>&quot;Email:ceo@co.com&quot;</span>],{'\n'}
                         {'  '}]&#123;{'\n'}
                         &#125;);{'\n\n'}
-                        <span className={styles.fn}>console</span>.<span className={styles.fn}>log</span>(<span className={styles.str}>&quot;⚡ Pipeline Active. 0 Manual Errors.&quot;</span>);
+                        <span className={styles.fn}>console</span>.<span className={styles.fn}>log</span>(<span className={styles.str}>&quot;⚡ Pipeline Active. 0 Manual Errors.&quot;</span>)<span className={styles.typingCursor}/>
                       </code>
                     </pre>
                   )}
@@ -269,7 +280,7 @@ export default function ServicesInteractive() {
                         {'      '}&lt;<span className={styles.fn}>InstantRegistration</span> limit=&#123;<span className={styles.num}>10000</span>&#125; /&gt;{'\n'}
                         {'    '}&lt;/<span className={styles.fn}>Layout</span>&gt;{'\n'}
                         {'  '});{'\n'}
-                        &#125;
+                        &#125;<span className={styles.typingCursor}/>
                       </code>
                     </pre>
                   )}
@@ -284,7 +295,7 @@ export default function ServicesInteractive() {
                         {'  '}guardrails: &#123; strictGrounding: <span className={styles.kw}>true</span>, maxTokens: <span className={styles.num}>250</span> &#125;,{'\n'}
                         {'  '}channels: [<span className={styles.str}>&quot;WhatsApp&quot;</span>, <span className={styles.str}>&quot;Website&quot;</span>, <span className={styles.str}>&quot;Slack&quot;</span>],{'\n'}
                         &#125;);{'\n\n'}
-                        <span className={styles.kw}>await</span> agent.<span className={styles.fn}>answer</span>(<span className={styles.str}>&quot;What is the SLA for enterprise billing?&quot;</span>);
+                        <span className={styles.kw}>await</span> agent.<span className={styles.fn}>answer</span>(<span className={styles.str}>&quot;What is the SLA for enterprise billing?&quot;</span>)<span className={styles.typingCursor}/>
                       </code>
                     </pre>
                   )}
@@ -299,7 +310,7 @@ export default function ServicesInteractive() {
                         {'  '}<span className={styles.kw}>await</span> Promise.<span className={styles.fn}>all</span>([{'\n'}
                         {'    '}syncCRM(data), syncInvoicing(data), syncSlack(data){'\n'}
                         {'  '}]);{'\n'}
-                        &#125;);
+                        &#125;)<span className={styles.typingCursor}/>
                       </code>
                     </pre>
                   )}
@@ -313,7 +324,7 @@ export default function ServicesInteractive() {
                         {'  '}maxRps: <span className={styles.num}>10000</span>,{'\n'}
                         {'  '}qrScannerSpeed: <span className={styles.str}>&quot;2.0s&quot;</span>,{'\n'}
                         {'  '}uptimeGuarantee: <span className={styles.str}>&quot;99.99%&quot;</span>,{'\n'}
-                        &#125;);
+                        &#125;)<span className={styles.typingCursor}/>
                       </code>
                     </pre>
                   )}
@@ -342,6 +353,12 @@ export default function ServicesInteractive() {
         <ScrollReveal delay={0.15}>
           <div className={styles.estimatorGrid}>
             <div className={styles.optionsList}>
+              <div className={styles.nodeConnector}>
+                <div 
+                  className={styles.nodeConnectorActive} 
+                  style={{ height: `${connectionHeight}%` }} 
+                />
+              </div>
               {ESTIMATOR_OPTIONS.map((opt) => {
                 const isSelected = selectedEstimates.includes(opt.id);
                 return (

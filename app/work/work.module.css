@@ -20,8 +20,8 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--accent);
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.2);
   padding: 0.35rem 0.9rem;
   border-radius: var(--radius-pill);
   margin-bottom: 1.5rem;
@@ -62,36 +62,52 @@
 .filterBtn {
   padding: 0.65rem 1.4rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(15, 23, 42, 0.6);
   border: 1px solid var(--surface-border);
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
   transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
 }
 
 .filterBtn:hover {
-  background: white;
-  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(124, 58, 237, 0.3);
   color: var(--text);
 }
 
 .filterActive {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 100%) !important;
+  background: linear-gradient(135deg, var(--accent) 0%, #5B21B6 100%) !important;
   color: white !important;
   border-color: transparent !important;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
 }
 
 /* ── Featured Hero Case Study ── */
 .featuredCaseStudy {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(9, 13, 22, 0.8);
   border-radius: var(--radius-lg);
   border: 1px solid var(--surface-border);
   padding: 3.5rem;
   margin-bottom: 4rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+.featuredCaseStudy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-3), var(--accent-2));
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
 }
 
 .featuredBadgeRow {
@@ -106,11 +122,11 @@
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--accent);
-  background: rgba(99, 102, 241, 0.08);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
   padding: 0.3rem 0.85rem;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .featuredYear {
@@ -130,7 +146,7 @@
   font-family: var(--font-space-mono), monospace;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -142,6 +158,7 @@
   line-height: 1.1;
   margin-top: 0.4rem;
   margin-bottom: 0.8rem;
+  color: #fff;
 }
 
 .featuredSub {
@@ -156,10 +173,25 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 1.75rem;
-  background: rgba(0, 0, 0, 0.025);
-  border: 1px solid var(--surface-border);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-md);
   margin-bottom: 2rem;
+}
+
+.psCol {
+  position: relative;
+}
+
+.psCol:first-child::after {
+  content: "→";
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-3);
+  font-size: 1.5rem;
+  opacity: 0.5;
 }
 
 .psLabel {
@@ -167,7 +199,7 @@
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--accent);
+  color: var(--accent-3);
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -204,13 +236,14 @@
 }
 
 .featuredSidePanel {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 100%);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
   color: white;
   border-radius: var(--radius-md);
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(124, 58, 237, 0.2);
 }
 
 .statHeroBox {
@@ -224,7 +257,7 @@
   font-size: 4rem;
   font-weight: 900;
   line-height: 1;
-  background: linear-gradient(135deg, #818cf8 0%, #22d3ee 100%);
+  background: linear-gradient(135deg, var(--accent-2) 0%, #34D399 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -244,7 +277,7 @@
   font-family: var(--font-space-mono), monospace;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  color: #818cf8;
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
@@ -259,8 +292,8 @@
   font-size: 0.72rem;
   padding: 0.35rem 0.8rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #e0e7ff;
 }
 
@@ -273,19 +306,37 @@
 }
 
 .projectCard {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(15, 23, 42, 0.6);
   border: 1px solid var(--surface-border);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
 }
 
 .projectCard:hover {
   transform: translateY(-6px);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.timelineBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-3));
+  transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.projectCard:hover .timelineBar {
+  width: 100%;
 }
 
 .cardHeader {
@@ -300,7 +351,7 @@
   font-family: var(--font-space-mono), monospace;
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-3);
   letter-spacing: 0.08em;
 }
 
@@ -309,11 +360,12 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-top: 0.25rem;
+  color: #fff;
 }
 
 .metricBadge {
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
   padding: 0.5rem 0.85rem;
   border-radius: var(--radius-md);
 }
@@ -321,7 +373,7 @@
 .metricBadgeNum {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--accent);
+  color: var(--accent-2);
 }
 
 .cardSub {
@@ -336,7 +388,7 @@
   flex-direction: column;
   gap: 0.85rem;
   padding: 1.25rem;
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: var(--radius-md);
   margin-bottom: 1.5rem;
 }
@@ -345,7 +397,7 @@
   font-family: var(--font-space-mono), monospace;
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--accent);
 }
 
 .detailText {
@@ -369,7 +421,7 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 1.25rem;
-  border-top: 1px solid var(--surface-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .cardTechRow {
@@ -383,8 +435,9 @@
   font-size: 0.68rem;
   padding: 0.2rem 0.6rem;
   border-radius: var(--radius-pill);
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cardYear {
@@ -395,12 +448,13 @@
 
 /* ── Bottom CTA ── */
 .bottomCtaBox {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(15, 23, 42, 0.7);
   border: 1px solid var(--surface-border);
   border-radius: var(--radius-lg);
   padding: 5rem 3rem;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
 }
 
 .bottomCtaTitle {
@@ -418,13 +472,13 @@
 }
 
 .bottomCtaBtn {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #5B21B6 100%);
   color: white;
   padding: 1rem 2.4rem;
   border-radius: var(--radius-pill);
   font-weight: 700;
   font-size: 0.95rem;
-  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.3);
 }
 
 /* ── Responsive ── */
@@ -434,5 +488,8 @@
   }
   .featuredCaseStudy {
     padding: 2rem;
+  }
+  .psCol:first-child::after {
+    display: none;
   }
 }

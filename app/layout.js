@@ -1,5 +1,7 @@
 import { Inter, Space_Mono } from "next/font/google";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,6 +27,8 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${spaceMono.variable}`}>
         <Navbar />
         {children}
+        <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

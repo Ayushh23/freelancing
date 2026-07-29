@@ -4,7 +4,7 @@
   border-bottom: 1px solid var(--surface-border);
   padding: 1.25rem 0;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(9, 13, 22, 0.6);
   backdrop-filter: blur(12px);
   position: relative;
   z-index: 2;
@@ -145,42 +145,73 @@
 .statCard {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 2rem 1.75rem;
-  background: rgba(255, 255, 255, 0.8);
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2.2rem 2rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(9, 13, 22, 0.9) 100%);
   border: 1px solid var(--surface-border);
+  border-top: 1px solid rgba(124, 58, 237, 0.3);
   border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  height: 100%;
 }
 
 .statCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(99,102,241,0.12);
-  border-color: rgba(99,102,241,0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
-.statIcon {
-  font-size: 1.5rem;
-  margin-bottom: 0.25rem;
+.statIconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.statValue {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 800;
+.statContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statValueRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.1rem;
+}
+
+.statValueRow span:first-child {
+  font-size: clamp(2.5rem, 3.5vw, 3.2rem);
+  font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 1;
-  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent-3) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+.statSuffix {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
 .statLabel {
   font-family: var(--font-space-mono), monospace;
-  font-size: 0.73rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 0.5rem;
 }
 
 /* ── Services preview ── */
@@ -193,19 +224,24 @@
 .serviceCard {
   padding: 2.5rem 2rem;
   border-radius: var(--radius-md);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(12px);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
   cursor: default;
 }
 
 .serviceCard:hover {
   transform: translateY(-6px) scale(1.01);
+  border-color: rgba(124, 58, 237, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
 }
 
 .serviceIcon {
   font-size: 2.2rem;
   display: block;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 2px 8px rgba(99,102,241,0.3));
+  filter: drop-shadow(0 2px 8px rgba(124,58,237,0.3));
 }
 
 .serviceTag {
@@ -235,7 +271,7 @@
 
 /* ── Featured Work ── */
 .featuredSection {
-  background: linear-gradient(180deg, transparent 0%, rgba(99,102,241,0.04) 50%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.04) 50%, transparent 100%);
 }
 
 .featuredGrid {
@@ -247,15 +283,19 @@
 .featuredCard {
   padding: 3rem;
   border-radius: var(--radius-lg);
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(12px);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
 .featuredCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  border-color: rgba(124, 58, 237, 0.2);
 }
 
 .featLabel {
@@ -280,7 +320,7 @@
   flex-direction: column;
   gap: 0.3rem;
   padding: 1rem 1.25rem;
-  background: var(--bg);
+  background: rgba(15, 23, 42, 0.8);
   border: 1px solid var(--surface-border);
   border-radius: var(--radius-sm);
 }
@@ -320,7 +360,7 @@
 }
 
 .step:hover {
-  background: rgba(255,255,255,0.7);
+  background: rgba(15, 23, 42, 0.6);
 }
 
 .stepIcon {
@@ -359,6 +399,9 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(16px);
 }
 
 .ctaOrb1 {
@@ -366,7 +409,7 @@
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%);
   top: -20%;
   left: -10%;
   filter: blur(40px);
@@ -379,7 +422,7 @@
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%);
   bottom: -15%;
   right: -8%;
   filter: blur(40px);
@@ -422,22 +465,22 @@
 }
 
 .ctaPrimary {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #5B21B6 100%);
   color: #fff;
   padding: 1rem 2.4rem;
   border-radius: var(--radius-pill);
   font-weight: 700;
   font-size: 0.95rem;
-  box-shadow: 0 4px 24px rgba(99,102,241,0.3);
+  box-shadow: 0 4px 24px rgba(124,58,237,0.35);
   transition: box-shadow var(--transition-base);
 }
 
 .ctaPrimary:hover {
-  box-shadow: 0 8px 40px rgba(99,102,241,0.5);
+  box-shadow: 0 8px 40px rgba(124,58,237,0.55);
 }
 
 .ctaSecondary {
-  background: rgba(255,255,255,0.8);
+  background: rgba(15, 23, 42, 0.8);
   color: var(--text);
   padding: 1rem 2.4rem;
   border-radius: var(--radius-pill);

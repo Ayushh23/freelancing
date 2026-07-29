@@ -1,23 +1,23 @@
 /* ── Design Tokens ── */
 :root {
-  --bg: #F4F4F1;
-  --text: #0a0a0a;
-  --text-muted: #6b7280;
-  --accent: #6366f1;
-  --accent-2: #8b5cf6;
-  --accent-3: #06b6d4;
-  --accent-glow: rgba(99, 102, 241, 0.35);
-  --accent-2-glow: rgba(139, 92, 246, 0.3);
+  --bg: #090D16;
+  --text: #E2E8F0;
+  --text-muted: #94A3B8;
+  --accent: #7C3AED;
+  --accent-2: #10B981;
+  --accent-3: #06B6D4;
+  --accent-glow: rgba(124, 58, 237, 0.35);
+  --accent-2-glow: rgba(16, 185, 129, 0.3);
   --accent-3-glow: rgba(6, 182, 212, 0.3);
-  --surface: rgba(255, 255, 255, 0.68);
-  --surface-border: rgba(0, 0, 0, 0.07);
-  --surface-glow: rgba(255, 255, 255, 0.9);
+  --surface: rgba(15, 23, 42, 0.72);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --surface-glow: rgba(124, 58, 237, 0.1);
   --radius-sm: 12px;
   --radius-md: 20px;
   --radius-lg: 32px;
   --radius-pill: 100px;
-  --shadow-card: 0 4px 24px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
-  --shadow-glow: 0 0 40px rgba(99,102,241,0.15);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
+  --shadow-glow: 0 0 40px rgba(124,58,237,0.15);
   --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -45,8 +45,8 @@ body {
   font-size: 16px;
   line-height: 1.6;
   background-image:
-    radial-gradient(ellipse 80% 60% at 10% -5%,  rgba(99,102,241,0.10) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 50% at 95% 85%,  rgba(139,92,246,0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 10% -5%,  rgba(124,58,237,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 95% 85%,  rgba(16,185,129,0.08) 0%, transparent 55%),
     radial-gradient(ellipse 50% 40% at 50% 110%, rgba(6,182,212,0.07)  0%, transparent 55%);
   background-attachment: fixed;
 }
@@ -75,7 +75,7 @@ button {
 
 /* Chrome gradient text */
 .text-chrome {
-  background: linear-gradient(135deg, #888 0%, #111 40%, #666 70%, #aaa 100%);
+  background: linear-gradient(135deg, #94A3B8 0%, #E2E8F0 40%, #64748B 70%, #CBD5E1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -119,8 +119,8 @@ button {
   background: var(--surface);
   backdrop-filter: blur(24px) saturate(1.5);
   -webkit-backdrop-filter: blur(24px) saturate(1.5);
-  border: 1px solid rgba(99,102,241,0.18);
-  box-shadow: var(--shadow-glow), inset 0 1px 0 rgba(255,255,255,0.5);
+  border: 1px solid rgba(124,58,237,0.18);
+  box-shadow: var(--shadow-glow), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 /* Container */
@@ -186,8 +186,8 @@ button {
 }
 
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.2); }
-  50%       { box-shadow: 0 0 40px rgba(99,102,241,0.45), 0 0 80px rgba(139,92,246,0.2); }
+  0%, 100% { box-shadow: 0 0 20px rgba(124,58,237,0.2); }
+  50%       { box-shadow: 0 0 40px rgba(124,58,237,0.45), 0 0 80px rgba(16,185,129,0.2); }
 }
 
 @keyframes shimmer {
@@ -213,6 +213,16 @@ button {
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(124, 58, 237, 0.2); }
+  50% { border-color: rgba(124, 58, 237, 0.5); }
+}
+
+@keyframes terminalBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 /* ── Reveal classes applied by ScrollReveal component ── */

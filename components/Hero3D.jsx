@@ -45,7 +45,7 @@ function ChromeBlob() {
       <mesh ref={meshRef}>
         <icosahedronGeometry args={[1.65, 20]} />
         <MeshDistortMaterial
-          color="#c8c8d8"
+          color="#a8a8c8"
           envMapIntensity={3.5}
           clearcoat={1}
           clearcoatRoughness={0}
@@ -73,7 +73,7 @@ function TorusKnot() {
       <mesh ref={ref} position={[3.2, -0.5, -1.5]} scale={0.55}>
         <torusKnotGeometry args={[1, 0.35, 120, 16]} />
         <MeshDistortMaterial
-          color="#818cf8"
+          color="#7C3AED"
           envMapIntensity={2}
           metalness={0.9}
           roughness={0.1}
@@ -127,7 +127,7 @@ function OrbitRing() {
   return (
     <mesh ref={ref} scale={2.8}>
       <torusGeometry args={[1, 0.012, 8, 120]} />
-      <meshStandardMaterial color="#6366f1" transparent opacity={0.35} />
+      <meshStandardMaterial color="#7C3AED" transparent opacity={0.35} />
     </mesh>
   );
 }
@@ -156,7 +156,7 @@ function FloatingParticles({ count = 320 }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.035}
-        color="#a5b4fc"
+        color="#a78bfa"
         transparent
         opacity={0.65}
         sizeAttenuation
@@ -255,18 +255,18 @@ export default function Hero3D() {
           >
             <Suspense fallback={<SceneLoader />}>
               <Environment preset="city" />
-              <ambientLight intensity={0.7} />
-              <directionalLight position={[8, 8, 4]} intensity={2} color="#ffffff" />
-              <directionalLight position={[-6, -4, -4]} intensity={1.2} color="#818cf8" />
-              <pointLight position={[0, 4, 2]} intensity={1} color="#22d3ee" />
-              <pointLight position={[4, -3, 1]} intensity={0.8} color="#a855f7" />
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[8, 8, 4]} intensity={2} color="#e0e0ff" />
+              <directionalLight position={[-6, -4, -4]} intensity={1.2} color="#7C3AED" />
+              <pointLight position={[0, 4, 2]} intensity={1} color="#10B981" />
+              <pointLight position={[4, -3, 1]} intensity={0.8} color="#7C3AED" />
 
               <CameraRig />
               <ChromeBlob />
               <TorusKnot />
               <SatelliteOrb position={[-3.0, 1.8, -1]}  color="#06b6d4" size={0.4} speed={2.2} />
-              <SatelliteOrb position={[ 2.8, 2.2, -0.5]} color="#a855f7" size={0.35} speed={1.5} />
-              <SatelliteOrb position={[-2.4, -2.2, -1]} color="#818cf8" size={0.3} speed={2.5} />
+              <SatelliteOrb position={[ 2.8, 2.2, -0.5]} color="#7C3AED" size={0.35} speed={1.5} />
+              <SatelliteOrb position={[-2.4, -2.2, -1]} color="#10B981" size={0.3} speed={2.5} />
               <OrbitRing />
               <FloatingParticles count={280} />
               <Stars radius={20} depth={20} count={400} factor={2} saturation={0.5} fade speed={0.5} />
