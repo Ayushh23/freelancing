@@ -246,13 +246,13 @@ export default function ServicesInteractive() {
                     <span className={styles.dotYellow} />
                     <span className={styles.dotGreen} />
                   </div>
-                  <span className={styles.terminalTitle}>{activeService.id}.config.ts — AUTOHUB Pipeline</span>
+                  <span className={styles.terminalTitle}>{activeService.id}.config.ts — AutoHub Labs Pipeline</span>
                 </div>
                 <div className={styles.terminalBody}>
                   {activeService.id === "automation" && (
                     <pre className={styles.codeText}>
                       <code>
-                        <span className={styles.kw}>import</span> &#123; Pipeline &#125; <span className={styles.kw}>from</span> <span className={styles.str}>&quot;@autohub/engine&quot;</span>;{'\n\n'}
+                        <span className={styles.kw}>import</span> &#123; Pipeline &#125; <span className={styles.kw}>from</span> <span className={styles.str}>&quot;@autohub-labs/engine&quot;</span>;{'\n\n'}
                         <span className={styles.cmt}>// Auto-executes report generation &amp; spreadsheet sync</span>{'\n'}
                         <span className={styles.kw}>export const</span> automation = <span className={styles.fn}>createPipeline</span>(&#123;{'\n'}
                         {'  '}schedule: <span className={styles.str}>&quot;0 8 * * 1-5&quot;</span>, <span className={styles.cmt}>// Mon-Fri at 8:00 AM</span>{'\n'}
@@ -288,7 +288,7 @@ export default function ServicesInteractive() {
                   {activeService.id === "ai-agents" && (
                     <pre className={styles.codeText}>
                       <code>
-                        <span className={styles.kw}>import</span> &#123; RAGAgent, Pinecone &#125; <span className={styles.kw}>from</span> <span className={styles.str}>&quot;@autohub/ai&quot;</span>;{'\n\n'}
+                        <span className={styles.kw}>import</span> &#123; RAGAgent, Pinecone &#125; <span className={styles.kw}>from</span> <span className={styles.str}>&quot;@autohub-labs/ai&quot;</span>;{'\n\n'}
                         <span className={styles.cmt}>// Strictly-grounded knowledge base response</span>{'\n'}
                         <span className={styles.kw}>const</span> agent = <span className={styles.kw}>new</span> <span className={styles.fn}>RAGAgent</span>(&#123;{'\n'}
                         {'  '}vectorStore: <span className={styles.str}>&quot;pinecone-company-docs&quot;</span>,{'\n'}
@@ -303,7 +303,7 @@ export default function ServicesInteractive() {
                   {activeService.id === "api-sync" && (
                     <pre className={styles.codeText}>
                       <code>
-                        <span className={styles.kw}>import</span> &#123; WebhookQueue &#125; <span className={styles.kw}>from</span> <span className={styles.str}>&quot;@autohub/middleware&quot;</span>;{'\n\n'}
+                        <span className={styles.kw}>import</span> &#123; WebhookQueue &#125; <span className={styles.kw}>from</span> <span className={styles.str}>&quot;@autohub-labs/middleware&quot;</span>;{'\n\n'}
                         <span className={styles.cmt}>// Instant 200ms multi-app data propagation</span>{'\n'}
                         <span className={styles.kw}>const</span> queue = <span className={styles.kw}>new</span> <span className={styles.fn}>WebhookQueue</span>(&#123; autoRetry: <span className={styles.num}>3</span> &#125;);{'\n'}
                         queue.<span className={styles.fn}>on</span>(<span className={styles.str}>&quot;CUSTOMER_UPDATED&quot;</span>, <span className={styles.kw}>async</span> (data) =&gt; &#123;{'\n'}
@@ -318,7 +318,7 @@ export default function ServicesInteractive() {
                   {activeService.id === "event-infra" && (
                     <pre className={styles.codeText}>
                       <code>
-                        <span className={styles.kw}>import</span> &#123; LoadBalancer &#125; <span className={styles.kw}>from</span> <span className={styles.str}>&quot;@autohub/infra&quot;</span>;{'\n\n'}
+                        <span className={styles.kw}>import</span> &#123; LoadBalancer &#125; <span className={styles.kw}>from</span> <span className={styles.str}>&quot;@autohub-labs/infra&quot;</span>;{'\n\n'}
                         <span className={styles.cmt}>// Handles 5,000+ peak registration traffic spikes</span>{'\n'}
                         <span className={styles.kw}>export const</span> infra = <span className={styles.kw}>new</span> <span className={styles.fn}>LoadBalancer</span>(&#123;{'\n'}
                         {'  '}maxRps: <span className={styles.num}>10000</span>,{'\n'}

@@ -4,6 +4,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import AnimatedCounter from "../components/AnimatedCounter";
 import GlowCard from "../components/GlowCard";
 import MagneticButton from "../components/MagneticButton";
+import Testimonials from "../components/Testimonials";
 import { Rocket, Timer, TrendingDown, Target, Settings, Globe, Bot, PhoneCall, ClipboardList, Hammer, Zap } from "lucide-react";
 // Note: MagneticButton handles Next.js Link internally via href prop
 import styles from "./home.module.css";
@@ -252,6 +253,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Testimonials ── */}
+      <Testimonials />
 
       {/* ── Bottom CTA ── */}
       <section className={`${styles.section} ${styles.ctaSection}`}>

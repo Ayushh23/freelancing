@@ -16,7 +16,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata = {
-  title: "AUTOHUB — Automation & Digital Solutions",
+  title: "AutoHub Labs Pvt. Ltd. — Automation & Digital Solutions",
   description:
     "Freelance automation, AI bots, and high-performance websites for businesses that want to move faster.",
 };

@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm";
 import styles from "./contact.module.css";
 
 export const metadata = {
-  title: "Contact | AUTOHUB",
+  title: "Contact | AutoHub Labs Pvt. Ltd.",
   description: "Get in touch — let's build something.",
 };
 

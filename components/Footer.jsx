@@ -14,7 +14,7 @@ export default function Footer() {
           <ScrollReveal>
             <div className={styles.brandCol}>
               <Link href="/" className={styles.logo}>
-                <span className={styles.logoAccent}>AUTO</span>HUB
+                <span className={styles.logoAccent}>AutoHub</span> Labs
               </Link>
               <p className={styles.brandDesc}>
                 We build automation systems that run silently in the background, 
@@ -68,7 +68,7 @@ export default function Footer() {
         <ScrollReveal delay={0.4}>
           <div className={styles.bottomSection}>
             <p className={styles.copyright}>
-              &copy; {currentYear} AUTOHUB. All rights reserved.
+              &copy; {currentYear} AutoHub Labs Pvt. Ltd. All rights reserved.
             </p>
             <p className={styles.crafted}>
               Engineered for the future.
